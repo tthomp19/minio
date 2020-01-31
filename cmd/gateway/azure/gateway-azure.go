@@ -55,7 +55,7 @@ const (
 	// seconds per MB of data a client expects to upload so we must transfer less
 	// than 0.5 MB per chunk to stay within the defaultDialTimeout tolerance.
 	// See https://github.com/Azure/azure-storage-blob-go/blob/fc70003/azblob/zc_policy_retry.go#L39-L44 for more details.
-	azureUploadChunkSize      = 0.25 * humanize.MiByte
+	azureUploadChunkSize      = 50 * humanize.MiByte
 	azureSdkTimeout           = (azureUploadChunkSize / humanize.MiByte) * 60 * time.Second
 	azureUploadMaxMemoryUsage = 10 * humanize.MiByte
 	azureUploadConcurrency    = azureUploadMaxMemoryUsage / azureUploadChunkSize
